@@ -1,2 +1,3 @@
 class DJsController < ApplicationController
+    
 end

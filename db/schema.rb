@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_07_06_185706) do
   end
 
   create_table "parties", force: :cascade do |t|
+    t.string "name"
     t.string "location"
     t.datetime "date"
     t.integer "dj_id"

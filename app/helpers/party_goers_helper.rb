@@ -1,0 +1,2 @@
+module PartyGoersHelper
+end

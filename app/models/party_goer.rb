@@ -6,4 +6,10 @@ class PartyGoer < ApplicationRecord
     validates :username, presence: true
     validates :age, numericality: {only_integer: true}
 
+
+    def parties_names
+        self.parties.map  do |party|
+            party.name
+        end.join
+    end
 end

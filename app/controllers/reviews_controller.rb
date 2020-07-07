@@ -2,11 +2,14 @@ class ReviewsController < ApplicationController
 
     def new
         @review = Review.new
+        @party = Party.find(params[:party_id])
     end
 
     def create
+        byebug
         @review = Review.new(review_params)
-         if review.valid?
+
+         if @review.valid?
             @review.save
             redirect_to party_path(@review.party)
         else 

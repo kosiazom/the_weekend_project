@@ -9,6 +9,7 @@ class PartiesController < ApplicationController
     end
 
     
+    
 
     private
 

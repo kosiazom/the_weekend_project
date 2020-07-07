@@ -1,10 +1,28 @@
 <h1>Review Page</h1>
 
-<%= form_for @review do |f| %>
+<%= form_for party_reviews_path do |f| %>
+<ul>
+        <% if @review.errors.any?%>
+            <%@review.errors.full_messages.each do |m| %>
+                <li><%= m %></li>
+            <%end%>
+        <%end%>
+    </ul>
+<p>
 <%= f. label :title %>
 <%= f.text_field :title %>
+</p>
+<p>
 <%= f.label :content %>
 <%= f.text_area :content %>  
-<%= f.collection_select(:party_goer_id, PartyGoer.all, :id, :username )%>
+</p>
+<%= f.label "Rating"%>
+<p>
+<%= f.collection_select(:party_goer_id, PartyGoer.all, :id, :username)%>
+<%= f.collection_select(:party_id, Party.all, :id, :name)%>
+
+#f.select "Rating", options_for_select([1, 2, 3, 4, 5 ])
+</p>
+
 <%= f.submit %>
 <% end %>

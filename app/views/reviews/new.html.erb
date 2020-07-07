@@ -1,2 +1,10 @@
 <h1>Review Page</h1>
 
+<%= form_for @review do |f| %>
+<%= f. label :title %>
+<%= f.text_field :title %>
+<%= f.label :content %>
+<%= f.text_area :content %>  
+<%= f.collection_select(:party_goer_id, PartyGoer.all, :id, :username )%>
+<%= f.submit %>
+<% end %>

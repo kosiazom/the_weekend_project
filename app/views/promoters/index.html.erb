@@ -1,0 +1,7 @@
+<h1>Promoters Page</h1>
+
+<ul>
+    <%@promoters.each do |promoter| %>
+    <li><%= link_to promoter.name, promoter_path(promoter)%></li>
+    <% end %>
+</ul>

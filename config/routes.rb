@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+  
+  root 'welcome#home'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  post '/logout' => 'sessions#destroy'
+  
   resources :guest_lists
   resources :djs, only: [:index, :show]
-  resources :party_goers
+  resources :party_goers, only: [:new, :create]
   resources :promoters, only: [:index, :show]
   
   post '/parties/:party_id/party_goers', to: 'party_goers#attend', as: 'attend_party'

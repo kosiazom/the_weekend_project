@@ -13,7 +13,7 @@ Review.destroy_all
 GuestList.destroy_all
 
 
-100.times do PartyGoer.create(username: Faker::Internet.username, tagline: Faker::Quote.famous_last_words, age:rand(18..45))
+100.times do PartyGoer.create(username: Faker::Internet.username, tagline: Faker::Quote.famous_last_words, age:rand(18..45), password: "password")
 end
 
 10.times do Promoter.create(name: Faker::TvShows::TheFreshPrinceOfBelAir.celebrity)

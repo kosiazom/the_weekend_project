@@ -3,11 +3,11 @@
 <div>Date: <%= @party.date.strftime("%B %d, %Y")%><br>
 
 
-<div>Promoter: <%= @party.promoter.name%><br>
+<div>Promoter: <%= link_to @party.promoter.name, promoter_path(@party.promoter)%><br>
 
 <div>Reviews: <%= @party.review_title %><br>
 
-<%= link_to "Review This Party", new_party_review_path(@party.id) %>
+<%= link_to "Review This Party", new_party_review_path(@party_id.reviews.new) %>
 
  <%#= link_to "Add Party to Party List", new_party_goer %>
 

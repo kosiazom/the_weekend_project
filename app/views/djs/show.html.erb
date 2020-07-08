@@ -4,4 +4,4 @@
 <div>Genre: <%= @dj.genre%></div>
 <div>Tagline: <em>"<%= @dj.tagline%>"</em></div>
 
-<div>DJ Parties: <%= link_to @dj.dj_party %></div>
+<div>DJ Parties: <%= link_to @dj.dj_party, party_path(@dj.party_ids)%></div>

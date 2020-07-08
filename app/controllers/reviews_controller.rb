@@ -6,7 +6,6 @@ class ReviewsController < ApplicationController
     end
 
     def create
-        byebug
         @review = Review.new(review_params)
 
          if @review.valid?

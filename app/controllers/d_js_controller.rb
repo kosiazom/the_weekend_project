@@ -1,3 +1,0 @@
-class DJsController < ApplicationController
-    
-end

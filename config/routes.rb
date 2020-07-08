@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :guest_lists
-  resources :djs
+  resources :djs, only: [:index, :show]
   resources :party_goers
   resources :promoters
   

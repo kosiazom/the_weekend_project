@@ -3,10 +3,11 @@ class SessionsController < ApplicationController
   end
 
   def create
+    #byebug
     username = params[:username]
     @user = PartyGoer.find_by(username: username)
     if @user && @user.authenticate(params[:password])
-     session[:user_id] =@user.id 
+     session[:user_id] = @user.id 
       flash[:message] = "Party Goer is logged in"
       redirect_to parties_path
     else
@@ -17,6 +18,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session.clear
-    redirect_to '/'
+    redirect_to login_path
   end
 end

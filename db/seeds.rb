@@ -19,6 +19,8 @@ end
 10.times do Promoter.create(name: Faker::TvShows::TheFreshPrinceOfBelAir.celebrity)
 end
 
+
+
 djs = [
     {
         name: "Dj Jazzy Fresh",

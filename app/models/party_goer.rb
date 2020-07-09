@@ -17,7 +17,7 @@ class PartyGoer < ApplicationRecord
 
     def party_reviewed
         
-    self.reviews.map do |review|
+        self.reviews.map do |review|
         review.content
         end.join(" , ")
     end

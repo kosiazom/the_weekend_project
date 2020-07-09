@@ -1,3 +1,10 @@
 <h3><%= @promoter.name %>'s Detail Page</h3>
 
-<div><strong>Parties:</strong> <%= link_to @promoter.promoter_party, party_path(@promoter.party_ids) %>
+ <% @promoter.parties.each  do |party| %>
+       <%= link_to party.name, party_path(@promoter.party_ids) %><br>
+        <%end %>
+
+
+
+
+ 

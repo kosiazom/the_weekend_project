@@ -1,6 +1,7 @@
 <h1>All of Your Parties</h1>
 
 <% if @party_goer.parties%>
-<%= link_to @party_goer.parties_names, party_path(@party_goer.party_ids) %>
+<%= link_to @party_goer.parties_names, party_path(@party_goer.party_ids) %><br>
+<%= @party_goer.party_reviewed %>
 <%end%>
 

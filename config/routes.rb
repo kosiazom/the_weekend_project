@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   
   resources :guest_lists
   resources :djs, only: [:index, :show]
-  resources :party_goers, only: [:new, :create]
+  resources :party_goers, only: [:show, :new, :create]
   resources :promoters, only: [:index, :show]
   
   post '/parties/:party_id/party_goers', to: 'party_goers#attend', as: 'attend_party'

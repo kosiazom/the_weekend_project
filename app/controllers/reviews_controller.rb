@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+    before_action :require_logged_in
 
     def new
         @review = Review.new
@@ -7,7 +8,7 @@ class ReviewsController < ApplicationController
 
     def create
         @review = Review.new(review_params)
-       
+        @party = Party.find(params[:party_id])
          if @review.valid?
             @review.save
             redirect_to party_path(@review.party)

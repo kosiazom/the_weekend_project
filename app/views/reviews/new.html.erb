@@ -17,13 +17,13 @@
 <%= f.label :content %>
 <%= f.text_area :content %>  
 </p>
-<%= f.label "Rating"%>
-<p>
-<%= f.collection_select(:party_goer_id, PartyGoer.all, :id, :username)%>
-<%= f.collection_select(:party_id, Party.all, :id, :name)%>
 
-<%= f.select :rating, options_for_select([1, 2, 3, 4, 5 ])%>
+<p>
+<div>PartyGoer Name: <%= f.collection_select(:party_goer_id, PartyGoer.all, :id, :username)%></div><br>
+<div>Party: <%= f.collection_select(:party_id, Party.all, :id, :name)%></div><br>
+
+<div>Rate This Party: <%= f.select :rating, options_for_select([1, 2, 3, 4, 5 ])%></div>
 </p>
 
-<%= f.submit %>
+<%= f.submit "Submit Review" %>
 <% end %>

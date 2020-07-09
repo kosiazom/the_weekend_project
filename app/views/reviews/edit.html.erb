@@ -1,0 +1,29 @@
+<h2>Edit Review</h2>
+
+<%= form_for @review, url: party_reviews_path do |f| %>
+<ul>
+
+        <% if @review.errors.any?%>
+            <%@review.errors.full_messages.each do |m| %>
+                <li><%= m %></li>
+            <%end%>
+        <%end%>
+    </ul>
+<p>
+<%= f. label :title %>
+<%= f.text_field :title %>
+</p>
+<p>
+<%= f.label :content %>
+<%= f.text_area :content %>  
+</p>
+
+<p>
+<div>PartyGoer Name: <%= f.collection_select(:party_goer_id, PartyGoer.all, :id, :username)%></div><br>
+<div>Party: <%= f.collection_select(:party_id, Party.all, :id, :name)%></div><br>
+
+<div>Rate This Party: <%= f.select :rating, options_for_select([1, 2, 3, 4, 5 ])%></div>
+</p>
+
+<%= f.submit "Edit Review"%>
+<% end %>

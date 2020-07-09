@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    #byebug
+    
     username = params[:username]
     @user = PartyGoer.find_by(username: username)
     if @user && @user.authenticate(params[:password])

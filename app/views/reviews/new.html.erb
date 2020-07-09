@@ -1,7 +1,8 @@
 <h1>Review Page</h1>
 
-<%= form_for party_reviews_path do |f| %>
+<%= form_for @review, url: party_reviews_path do |f| %>
 <ul>
+
         <% if @review.errors.any?%>
             <%@review.errors.full_messages.each do |m| %>
                 <li><%= m %></li>
@@ -21,7 +22,7 @@
 <%= f.collection_select(:party_goer_id, PartyGoer.all, :id, :username)%>
 <%= f.collection_select(:party_id, Party.all, :id, :name)%>
 
-#f.select "Rating", options_for_select([1, 2, 3, 4, 5 ])
+<%= f.select :rating, options_for_select([1, 2, 3, 4, 5 ])%>
 </p>
 
 <%= f.submit %>

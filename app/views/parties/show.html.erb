@@ -1,11 +1,14 @@
 <h1><%=@party.name%> Detail Page</h1>
-<div>Location: <%= @party.location%></div>
-<div>Date: <%= @party.date.strftime("%B %d, %Y")%><br>
+<div><strong>Location: </strong><%= @party.location%></div>
+<div><strong>Date:</strong> <%= @party.date.strftime("%B %d, %Y")%><br>
 
 
-<div>Promoter: <%= link_to @party.promoter.name, promoter_path(@party.promoter)%><br>
+<div><strong>Promoter: </strong> <%= link_to @party.promoter.name, promoter_path(@party.promoter)%><br>
 
-<div>Reviews: <%= @party.review_title %><br>
+<div><strong>Reviews:</strong> </div> 
+<ul>
+    <li><%= link_to @party.review_title, party_reviews_path %></li>
+</ul>
 
 <%#= link_to "Review This Party", new_party_review_path(@party_id.reviews.new) %>
 

@@ -79,7 +79,7 @@ end
 10.times do Party.create(name:Faker::Kpop.iii_groups, location:Faker::Address.street_address, date:Faker::Date.between_except(from: 1.year.ago, to: 1.year.from_now, excepted: Date.today), promoter_id:Promoter.all.sample.id, dj_id:Dj.all.sample.id)
 end
 
-20.times do Review.create(title:Faker::TvShows::TheFreshPrinceOfBelAir.quote, content:Faker::TvShows::GameOfThrones.quote, party_goer_id:PartyGoer.all.sample.id, party_id:Party.all.sample.id)
+20.times do Review.create(title:Faker::TvShows::TheFreshPrinceOfBelAir.quote, content:Faker::TvShows::GameOfThrones.quote,rating: rand(1..5), party_goer_id:PartyGoer.all.sample.id, party_id:Party.all.sample.id)
 end
 
 30.times do GuestList.create(party_id:Party.all.sample.id, party_goer_id:PartyGoer.all.sample.id)

@@ -1,7 +1,12 @@
 <h3><%=@dj.name%>'s Detail Page</h3>
 
-<div>Name: <%= @dj.name %></div>
-<div>Genre: <%= @dj.genre%></div>
-<div>Tagline: <em>"<%= @dj.tagline%>"</em></div>
+<div><strong>Name: </strong><%= @dj.name %></div>
+<div><strong>Genre: </strong><%= @dj.genre%></div>
+<div><strong>Tagline: </strong> <em>"<%= @dj.tagline%>"</em></div>
 
-<div>DJ Parties: <%= link_to @dj.dj_party, party_path(@dj.party_ids)%></div>
+<div><strong>DJ Parties: </strong></div>
+ <% @dj.parties.each do |party|%>
+<li><%= link_to party.name, party_path(party.id)%></li>
+<% end %>
+
+

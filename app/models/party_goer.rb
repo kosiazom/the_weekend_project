@@ -22,4 +22,13 @@ class PartyGoer < ApplicationRecord
         end.join(" , ")
     end
     
+    def party_count
+        self.parties.count
+    end
+
+    def favorite_party
+        self.reviews.map do |rating|
+            rating
+        end.max
+    end
 end

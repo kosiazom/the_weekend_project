@@ -14,26 +14,27 @@
   <% unless controller_name == "sessions" && action_name == "new" %>
 
     <nav class="navbar is-success">
+    
 
 
       <% if session[:user_id] %>
 
-          <div>Welcome <%= current_user.username %></div>
-     <div class="navbar-menu">
+        <div>Welcome <%= current_user.username %></div>
           <div class="navbar-end">
           <%= link_to "Log out", logout_path, class: "navbar-item" %>
-         </div>
+          </div>
+        
       <% else %>
-
+    
         <div class="navbar-end">
           <%= link_to "Log In", login_path, class: "navbar-item"%>
         </div>
       <% end %>
-      </div>
-    <% end %>
+       
+    </nav>
+     <% end %>
 
     <%= yield %>
 
-    
   </body>
 </html>

@@ -11,4 +11,13 @@ class Review < ApplicationRecord
         end
         rate.max
     end
+
+    def reviewed_by
+        self.party_goer.username
+    end
+    
+    # def reviewed_for
+        
+    # end
+    
 end

@@ -15,7 +15,7 @@ class Party < ApplicationRecord
    rate = self.reviews.map do |review|
         review.rating 
     end
-    rate.sum/rate.length
+    rate.sum/rate.length.to_f
  end
 
  def num_of_guests

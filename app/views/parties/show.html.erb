@@ -4,7 +4,7 @@
 
 
 <div><strong>Promoter: </strong> <%= link_to @party.promoter.name, promoter_path(@party.promoter)%><br>
-
+<div><strong>DJ: </strong> <%= link_to @party.dj.name, dj_path(@party.dj)%>
 <div><strong>Reviews:</strong> </div> 
     <ul>
         <% @party.reviews.each do|review| %>
@@ -13,14 +13,13 @@
         <%= review.content%> 
          <div>Rating: <%=review.rating%></div>
 
-       
+
 
         <%end%>
     </ul>
 
-<%=link_to "Review This Party", new_party_review_path(@party.id)%>
-
-<%#= link_to "My Parties", party_goer_path(@party_goer.id)%>
+<%=link_to "Review This Party", new_party_review_path(@party.id)%><br>
 
  <%= button_to "Add Party to Party List", attend_party_path(@party.id) %>
+ <%= link_to "Back to Parties", parties_path%>
 

@@ -1,6 +1,6 @@
 <h2>Edit Review</h2>
 
-<%= form_for @review, url: party_reviews_path do |f| %>
+<%= form_for @review, url: party_review_path, method: "PATCH" do |f| %>
 <ul>
 
         <% if @review.errors.any?%>

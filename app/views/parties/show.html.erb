@@ -10,7 +10,8 @@
         <% @party.reviews.each do|review| %>
 
         <li><%= review.title %></li>
-        <%= review.content%>| <div>Rating: <%=review.rating%></div>
+        <%= review.content%> 
+         <div>Rating: <%=review.rating%></div>
 
        
 
@@ -19,5 +20,7 @@
 
 <%=link_to "Review This Party", new_party_review_path(@party.id)%>
 
- <%#= link_to "Add Party to Party List", new_party_goer %>
+<%#= link_to "My Parties", party_goer_path(@party_goer.id)%>
+
+ <%= button_to "Add Party to Party List", attend_party_path(@party.id) %>
 

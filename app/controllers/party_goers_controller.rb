@@ -9,7 +9,10 @@ class PartyGoersController < ApplicationController
 
 
     def attend
-
+        
+       GuestList.create(party_id: params[:party_id], party_goer_id: session[:user_id])
+   redirect_to party_goer_path(session[:user_id])
+        
     end
 
     def new
@@ -28,4 +31,7 @@ class PartyGoersController < ApplicationController
       params.require(:party_goer).permit(:username, :tagline, :age, :password, :password_confirmation)
     end
   
+    # def attend_params
+    #     params.require(:guest_list).permit(: :party_id)
+    # end
 end

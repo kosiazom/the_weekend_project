@@ -11,6 +11,11 @@ class Promoter < ApplicationRecord
         self.parties.count
     end
     
+    # def highest_reviewed
+    #     self.parties.each  do |party|
+    #         party.reviews.ratings
+    #     end
+    # end
 end
 
 # How many parties a promoter has
